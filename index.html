@@ -1,0 +1,1198 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Design Light | Bespoke Design & Craftsmanship</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #07111c;
+            color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(7, 17, 28, 0.85);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            letter-spacing: 5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav a:hover {
+            color: #8db5d5;
+        }
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 8% 80px;
+            display: flex;
+            align-items: center;
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.55),
+                    rgba(0, 0, 0, 0.55)
+                ),
+                url("home.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .small-title {
+            color: #8db5d5;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(60px, 9vw, 120px);
+            font-weight: normal;
+            line-height: 0.9;
+        }
+
+        .hero h1 span {
+            color: #8db5d5;
+        }
+
+        .hero p {
+            max-width: 550px;
+            margin-top: 35px;
+            color: #d1d6da;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 28px;
+            border: 1px solid #8db5d5;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: 0.3s ease;
+        }
+
+        .button:hover {
+            background: #8db5d5;
+            color: #07111c;
+        }
+
+        section {
+            padding: 120px 8%;
+        }
+
+        .label {
+            color: #b99b63;
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .title {
+            font-family: Georgia, serif;
+            font-size: clamp(50px, 7vw, 85px);
+            font-weight: normal;
+            line-height: 0.95;
+        }
+
+        .intro {
+            background: #f2eee6;
+            color: #111820;
+        }
+
+        .intro-content {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .intro h2 {
+            max-width: 950px;
+            font-family: Georgia, serif;
+            font-size: clamp(45px, 6vw, 75px);
+            font-weight: normal;
+            line-height: 1;
+        }
+
+        .intro h2 span {
+            color: #173f63;
+        }
+
+        .intro p {
+            max-width: 650px;
+            margin: 45px 0 0 auto;
+            color: #666666;
+            line-height: 2;
+            font-size: 14px;
+        }
+
+        .about {
+            background: #0b1825;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            background-image: url("https://raw.githubusercontent.com/lanakhalouf/Design-Light/08e74d6532ee4e54f9f870b8aeba4a09a07b8232/2004chandelier.jpeg");
+            background-size: cover;
+            background-position: center;
+            min-height: 600px;
+        }
+
+        .about-text p {
+            margin-top: 25px;
+            max-width: 550px;
+            color: #aeb5ba;
+            line-height: 1.9;
+            font-size: 14px;
+        }
+
+        .different {
+            background: #173f63;
+        }
+
+        .different-content {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .different h2 {
+            max-width: 800px;
+            font-family: Georgia, serif;
+            font-size: clamp(50px, 7vw, 85px);
+            font-weight: normal;
+            line-height: 0.95;
+        }
+
+        .different-description {
+            max-width: 700px;
+            margin-top: 40px;
+            color: #dce6ed;
+            line-height: 2;
+            font-size: 14px;
+        }
+
+        .values {
+            margin-top: 70px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .value {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 20px;
+        }
+
+        .value span {
+            color: #a9c6dc;
+            font-size: 10px;
+        }
+
+        .value h3 {
+            margin-top: 20px;
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-weight: normal;
+        }
+
+        .services {
+            background: #05080b;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .services-intro {
+            max-width: 600px;
+            margin-bottom: 60px;
+        }
+
+        .services-intro p {
+            margin-top: 25px;
+            color: #aeb5ba;
+            line-height: 1.9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .service {
+            min-height: 380px;
+            padding: 30px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                transparent,
+                rgba(0, 0, 0, 0.9)
+            );
+        }
+
+        .service-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-number {
+            color: #9fc0da;
+            font-size: 10px;
+            letter-spacing: 3px;
+        }
+
+        .service h3 {
+            margin-top: 10px;
+            font-family: Georgia, serif;
+            font-size: 32px;
+            font-weight: normal;
+        }
+
+        .service p {
+            margin-top: 12px;
+            color: #d0d0d0;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .service-one {
+            background-image: url("bespoke.jpg");
+        }
+
+        .service-two {
+            background-image: url("chandeliers.jpg");
+        }
+
+        .service-three {
+            background-image: url("mirror.jpg");
+        }
+
+        .service-four {
+            background-image: url("interior.jpg");
+        }
+
+        .service-five {
+            background-image: url("consultation.jpg");
+        }
+
+        .service-six {
+            background-image: url("projects.jpg");
+        }
+
+        .examples {
+            background: #0a1118;
+        }
+
+        .examples-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .examples-description {
+            max-width: 550px;
+            margin-top: 25px;
+            color: #aeb5ba;
+            line-height: 1.9;
+        }
+
+        .gallery {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: 1.8fr 1fr;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            display: grid;
+            grid-template-rows: 1fr auto;
+            gap: 15px;
+        }
+
+        .gallery-small-item {
+            display: grid;
+            grid-template-rows: minmax(320px, 1fr) auto;
+            gap: 15px;
+        }
+
+        .gallery-large {
+            min-height: 650px;
+            background-image:
+                url("bigbox.jpg");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .gallery-caption {
+            color: #d1d6da;
+            font-size: 13px;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+        }
+
+        .gallery-right {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .gallery-small-one {
+            background-image:
+                url("smallbox.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-small-two {
+            background-image:
+                url("smallpic.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .examples-note {
+            margin-top: 20px;
+            color: #b99b63;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .process {
+            background: #f2eee6;
+            color: #111820;
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .process-description {
+            max-width: 600px;
+            margin-top: 30px;
+            color: #686868;
+            line-height: 1.9;
+        }
+
+        .process-grid {
+            margin-top: 70px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .process-step {
+            border-top: 1px solid #c8c3bb;
+            padding-top: 20px;
+        }
+
+        .process-step span {
+            color: #a08250;
+            font-size: 10px;
+        }
+
+        .process-step h3 {
+            margin-top: 20px;
+            font-family: Georgia, serif;
+            font-size: 28px;
+            font-weight: normal;
+        }
+
+        .process-step p {
+            margin-top: 15px;
+            color: #6c6c6c;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .create {
+            text-align: center;
+            background-image:
+                linear-gradient(
+                    rgba(7, 17, 28, 0.85),
+                    rgba(7, 17, 28, 0.85)
+                ),
+                url("unique.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .create h2 {
+            max-width: 900px;
+            margin: auto;
+            font-family: Georgia, serif;
+            font-size: clamp(50px, 8vw, 100px);
+            font-weight: normal;
+            line-height: 0.9;
+        }
+
+        .create p {
+            max-width: 600px;
+            margin: 30px auto;
+            color: #cbd3d9;
+            line-height: 1.9;
+        }
+
+        .contact {
+            background: #f2eee6;
+            color: #111820;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .contact h2 {
+            font-family: Georgia, serif;
+            font-size: clamp(50px, 7vw, 85px);
+            font-weight: normal;
+            line-height: 0.9;
+        }
+
+        .contact-description {
+            max-width: 500px;
+            margin-top: 30px;
+            color: #686868;
+            line-height: 1.9;
+        }
+
+        .contact-list {
+            border-top: 1px solid #c8c3bb;
+        }
+
+        .contact-item {
+            padding: 22px 0;
+            border-bottom: 1px solid #c8c3bb;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .contact-item span {
+            color: #a08250;
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .contact-item strong {
+            font-size: 13px;
+            font-weight: normal;
+            text-align: right;
+        }
+
+        .contact-item a:hover {
+            color: #173f63;
+        }
+
+        footer {
+            padding: 60px 8% 30px;
+            background: #05080b;
+            color: #777;
+        }
+
+        .footer-top {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-logo {
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 25px;
+            letter-spacing: 4px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 50px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 9px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 800px) {
+            nav {
+                display: none;
+            }
+
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                min-height: 450px;
+            }
+
+            .values,
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-large {
+                min-height: 450px;
+            }
+
+            .gallery-right {
+                min-height: 500px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .values,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-item {
+                flex-direction: column;
+            }
+
+            .contact-item strong {
+                text-align: left;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#home" class="logo">
+            DESIGN LIGHT
+        </a>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#examples">Examples</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <div class="small-title">
+                Since 2004 · Bespoke Design & Craftsmanship
+            </div>
+
+            <h1>
+                DESIGN<br>
+                <span>LIGHT</span>
+            </h1>
+
+            <p>
+                Bespoke chandeliers, custom mirrors and distinctive
+                interior pieces, thoughtfully created to bring each
+                client's vision to life.
+            </p>
+
+            <a href="#examples" class="button">
+                Explore Our Work
+            </a>
+
+        </div>
+    </section>
+
+    <section class="intro">
+
+        <div class="intro-content">
+
+            <div class="label">
+                Design Light
+            </div>
+
+            <h2>
+                Creating pieces that bring
+                <span>elegance and character</span>
+                to every space.
+            </h2>
+
+            <p>
+                Design Light specializes in bespoke chandeliers,
+                custom mirrors and distinctive interior pieces,
+                creating refined and personalized designs that
+                bring each client's vision to life. From concept
+                and design to the final creation, we focus on
+                exceptional craftsmanship, quality materials
+                and timeless elegance.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="about" id="about">
+
+        <div class="about-container">
+
+            <div class="about-image"></div>
+
+            <div class="about-text">
+
+                <div class="label">
+                    Our Story
+                </div>
+
+                <h2 class="title">
+                    A vision<br>
+                    since 2004.
+                </h2>
+
+                <p>
+                    Design Light was created in 2004 with a vision
+                    to transform ideas into distinctive pieces
+                    that bring elegance and character to every space.
+                </p>
+
+                <p>
+                    We believe in individuality, timeless design,
+                    quality craftsmanship and attention to every
+                    detail.
+                </p>
+
+                <p>
+                    By listening closely to each client and
+                    understanding their vision, we create
+                    thoughtfully designed pieces that are unique
+                    to their space.
+                </p>
+
+                <p>
+                    Our goal is to create work that inspires
+                    admiration, reflects individuality and leaves
+                    a lasting impression.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="different">
+
+        <div class="different-content">
+
+            <div class="label">
+                Why Design Light
+            </div>
+
+            <h2>
+                Made for you.<br>
+                Never simply made.
+            </h2>
+
+            <p class="different-description">
+                At Design Light, we go beyond creating beautiful
+                pieces — we create designs that are made specifically
+                for you. Every project begins with understanding your
+                vision, preferences and space, allowing us to develop
+                a design that feels truly personal and unique.
+            </p>
+
+            <div class="values">
+
+                <div class="value">
+                    <span>01</span>
+                    <h3>Individuality</h3>
+                </div>
+
+                <div class="value">
+                    <span>02</span>
+                    <h3>Craftsmanship</h3>
+                </div>
+
+                <div class="value">
+                    <span>03</span>
+                    <h3>Quality</h3>
+                </div>
+
+                <div class="value">
+                    <span>04</span>
+                    <h3>Timeless Design</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="services" id="services">
+
+        <div class="services-container">
+
+            <div class="services-intro">
+
+                <div class="label">
+                    What We Create
+                </div>
+
+                <h2 class="title">
+                    Our Services
+                </h2>
+
+                <p>
+                    From statement lighting to distinctive interior
+                    elements, every creation is developed around the
+                    needs, style and vision of our client.
+                </p>
+
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service service-one">
+                    <div class="service-content">
+                        <div class="service-number">
+                            01 · BESPOKE LIGHTING
+                        </div>
+                        <h3>Bespoke Lighting</h3>
+                        <p>
+                            Lighting created specifically for your
+                            space, style and vision.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service service-two">
+                    <div class="service-content">
+                        <div class="service-number">
+                            02 · CHANDELIERS
+                        </div>
+                        <h3>Custom Chandeliers</h3>
+                        <p>
+                            Statement chandeliers designed to become
+                            a defining element of your space.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service service-three">
+                    <div class="service-content">
+                        <div class="service-number">
+                            03 · MIRRORS
+                        </div>
+                        <h3>Custom Mirrors</h3>
+                        <p>
+                            Distinctive mirrors designed to complement
+                            the architecture and character of your space.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service service-four">
+                    <div class="service-content">
+                        <div class="service-number">
+                            04 · INTERIORS
+                        </div>
+                        <h3>Custom Interior Pieces</h3>
+                        <p>
+                            Unique interior elements created to bring
+                            personality and character to your surroundings.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service service-five">
+                    <div class="service-content">
+                        <div class="service-number">
+                            05 · CONSULTATION
+                        </div>
+                        <h3>Lighting Design & Consultation</h3>
+                        <p>
+                            Thoughtful guidance from the first idea
+                            through the development of your design.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service service-six">
+                    <div class="service-content">
+                        <div class="service-number">
+                            06 · CUSTOM
+                        </div>
+                        <h3>Custom Projects</h3>
+                        <p>
+                            Have something unique in mind? We work
+                            with you to develop a design around your
+                            individual requirements.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="examples" id="examples">
+
+        <div class="examples-container">
+
+            <div class="label">
+                Examples
+            </div>
+
+            <h2 class="title">
+                Selected Work
+            </h2>
+
+            <p class="examples-description">
+                A selection of spaces and pieces that reflect
+                our approach to distinctive design, craftsmanship
+                and timeless detail.
+            </p>
+
+            <div class="gallery">
+
+                <div class="gallery-item">
+                    <div class="gallery-large"></div>
+                    <div class="gallery-caption">(This Chandelier was done in a mosque in the UAE)</div>
+                </div>
+
+                <div class="gallery-right">
+
+                    <div class="gallery-small-item">
+                        <div class="gallery-small-one"></div>
+                        <div class="gallery-caption">(Done in Ritz Carlton Moscow)</div>
+                    </div>
+
+                    <div class="gallery-small-item">
+                        <div class="gallery-small-two"></div>
+                        <div class="gallery-caption">(Done in a Palace in Oman)</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="examples-note">
+                Examples of Design Light creations
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="process" id="process">
+
+        <div class="process-container">
+
+            <div class="label">
+                Our Process
+            </div>
+
+            <h2 class="title">
+                From idea<br>
+                to reality.
+            </h2>
+
+            <p class="process-description">
+                From the first conversation to the final creation,
+                we work closely with our clients throughout every
+                stage of the process.
+            </p>
+
+            <div class="process-grid">
+
+                <div class="process-step">
+                    <span>01</span>
+                    <h3>Consultation</h3>
+                    <p>
+                        We begin by understanding your vision,
+                        preferences, requirements and space.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <span>02</span>
+                    <h3>Design</h3>
+                    <p>
+                        Your ideas are developed into a considered
+                        design based on your individual requirements.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <span>03</span>
+                    <h3>Creation</h3>
+                    <p>
+                        Once the design is approved, it is brought
+                        to life through careful craftsmanship and
+                        quality materials.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <span>04</span>
+                    <h3>Completion</h3>
+                    <p>
+                        We focus on every final detail to ensure
+                        the finished piece reflects your original
+                        vision.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="create">
+
+        <div class="label">
+            Your Vision · Your Space · Your Design
+        </div>
+
+        <h2>
+            Create something<br>
+            uniquely yours.
+        </h2>
+
+        <p>
+            Have a vision in mind? From a statement chandelier
+            to a completely custom interior piece, let's create
+            something designed specifically for you.
+        </p>
+
+        <a href="#contact" class="button">
+            Start Your Project
+        </a>
+
+    </section>
+
+    <section class="contact" id="contact">
+
+        <div class="contact-container">
+
+            <div>
+
+                <div class="label">
+                    Start A Conversation
+                </div>
+
+                <h2>
+                    Let's create<br>
+                    something<br>
+                    remarkable.
+                </h2>
+
+                <p class="contact-description">
+                    Whether you have a complete vision or simply
+                    an idea, we'd love to hear about your project
+                    and explore how we can bring it to life.
+                </p>
+
+            </div>
+
+            <div class="contact-list">
+
+                <div class="contact-item">
+                    <span>Telephone</span>
+                    <strong>
+                        <a href="tel:065354855">
+                            06-5354855
+                        </a>
+                    </strong>
+                </div>
+
+                <div class="contact-item">
+                    <span>Phone</span>
+                    <strong>
+                        <a href="tel:+971506249223">
+                            +971 50 624 9223
+                        </a>
+                    </strong>
+                </div>
+
+                <div class="contact-item">
+                    <span>Fax</span>
+                    <strong>
+                        06-5354866
+                    </strong>
+                </div>
+
+                <div class="contact-item">
+                    <span>Email</span>
+                    <strong>
+                        <a href="mailto:firkhal@eim.ae">
+                            firkhal@eim.ae
+                        </a>
+                    </strong>
+                </div>
+
+                <div class="contact-item">
+                    <span>Mail</span>
+                    <strong>
+                        SHARJAH - UAE<br>
+                        P.O. Box 25882
+                    </strong>
+                </div>
+
+                <div class="contact-item">
+                    <span>Location</span>
+                    <strong>
+                        <a
+                            href="https://maps.app.goo.gl/fh3xRAP5Zxu8X4mE9"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            View Location →
+                        </a>
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div class="footer-logo">
+                DESIGN LIGHT
+            </div>
+
+            <div class="footer-links">
+
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#examples">Examples</a>
+                <a href="#process">Process</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Design Light. All rights reserved.
+            · Sharjah, UAE · Since 2004
+        </div>
+
+    </footer>
+
+</body>
+</html>
+```
